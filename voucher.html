@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Save Web Form Data to Spreadsheets</title>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/werD98W7kOPiTtuO/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<form id="myForm">
+		<label>Voucher Number</label>
+		<input name="Voucher Number" />
+		<br/>
+		<label>Date</label>
+		<input name="Date" />
+		<br/>
+		<label>Customer Name</label>
+		<input name="Customer Name" />
+		<br/>
+		<label>Goods Description</label>
+		<input name="Goods Description" />
+		<br/>
+		<label>Vehicle Number</label>
+		<input name="Vehicle Number" />
+		<br/>
+		<label>Driver Name</label>
+		<input name="Driver Name" />
+		<br/>
+		<label>Distance</label>
+		<input name="Distance" />
+		<br/>
+		<label>Diesel Quantity</label>
+		<input name="Diesel Quantity" />
+		<br/>
+		<label>Diesel Cost</label>
+		<input name="Diesel Cost" />
+		<br/>
+		<label>Freight Charges</label>
+		<input name="Freight Charges" />
+		<br/>
+		<label>Total Diesel Cost</label>
+		<input name="Total Diesel Cost" />
+		<br/>
+		<label>Tyre Expenses</label>
+		<input name="Tyre Expenses" />
+		<br/>
+		<label>Repair Expenses</label>
+		<input name="Repair Expenses" />
+		<br/>
+		<label>Driver Allowance</label>
+		<input name="Driver Allowance" />
+		<br/>
+		<label>Total Expenses</label>
+		<input name="Total Expenses" />
+		<br/>
+		<label>Advance Payment</label>
+		<input name="Advance Payment" />
+		<br/>
+		<label>Balance Payable</label>
+		<input name="Balance Payable" />
+		<br/>
+		<label>Approval Signatures</label>
+		<input name="Approval Signatures" />
+		<br/>
+	</form>
+	<button onclick='SubForm()'>Submit</button>
+</body>
+</html>
